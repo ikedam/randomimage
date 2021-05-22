@@ -1,0 +1,5 @@
+/.git
+/*.cgi
+/docker-compose.yaml
+/Dockerfile
+/images
