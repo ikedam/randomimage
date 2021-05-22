@@ -62,6 +62,8 @@ func main() {
 				fmt.Fprintf(w, "Failed open file %v: %+v", file.Name(), err)
 				return
 			}
+			w.Header().Add("Content-Length", fmt.Sprintf("%v", file.Size()))
+			w.Header().Add("Cache-Control", "no-cache")
 			w.WriteHeader(http.StatusOK)
 			io.Copy(w, fh)
 			return
